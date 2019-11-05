@@ -6,9 +6,28 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root">
-      <h1>Hello world!</h1>
-    </div>
+    <div id="write">
+   <span> <center>
+     <img src="/images/cat.png" weigth="150px" heigth="95px"></center></span>
+
+  <p> Fecha:</p> <input type="date">
+  <p> Título: </p> <input type="text">
+
+  <form id='diary' align="center">
+       <!-- Aquí es donde se guarda el texto y el numero que el usuario ingresa-->
+       <br>
+     <input type="number" id="number" placeholder="Número" required>
+     <br><br>
+     <textarea type="text" placeholder="Escribe adentro" rows="30" cols="50" id="text" required></textarea>
+     <br>
+     <button type="submit" id="save">Guardar</button>
+     <button type"reset">Borrar todo</button>
+     </form>
+   </div>
+
+   <div id='ShowResult'>
+     <input type="text" id="textEncode">
+     </div>
     <script src="cipher.js"></script>
     <script src="index.js"></script>
   </body>
