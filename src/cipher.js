@@ -1,29 +1,44 @@
 window.cipher = {
-  encode (mayus, offset){
-  let result = "";
-  for (i = 0; i < mayus.length; i++){
-    let encodeText = (mayus.charCodeAt(i) - 65 + offset) % 26 + 65;
+encode(text, offset){
+  let encodeResult = "";
+  for (let i = 0; i < text.length; i++){
+if(offset < 0){
+    if (text.charCodeAt(i)>=65 && text.charCodeAt(i)<=90){ encodeText = (text.charCodeAt(i) - 90 + offset) % 26 + 90;
+    }else if(text.charCodeAt(i)>=97 && text.charCodeAt(i)<=122){
+      encodeText = (text.charCodeAt(i) - 122 + offset) % 26 + 122;
+    }else{
+        encodeText = text.charCodeAt(i);
+    }
 
-    let ascii = String.fromCharCode(encodeText);
-    result += ascii.replace(";", " ");
-
-
+}
+else{
+    if (text.charCodeAt(i)>=65 && text.charCodeAt(i)<=90){     encodeText = (text.charCodeAt(i) - 65 + offset) % 26 + 65;
+    }else if(text.charCodeAt(i)>=97 && text.charCodeAt(i)<=122){
+      encodeText = (text.charCodeAt(i) - 97 + offset) % 26 + 97;
+    }else{
+      encodeText = text.charCodeAt(i);
+    }
+    }
+    encodeResult = encodeResult + String.fromCharCode(encodeText);
+    }
+  return encodeResult
   }
-  return result
-}
-}
-decode (mayus, offset){
-let result = "";
-for (i = 0; i < mayus.length; i++){
-  let encodeText = (mayus.charCodeAt(i) - 90 + offset) % 26 + 90;
+  ,
+decode(textEncode, offset){
+  let decodeResult="";
 
-  let ascii = String.fromCharCode(encodeText);
-  result += ascii.replace(";", " ");
-
-
-}
-return result
-}
+  for (let i = 0; i < textEncode.length; i++){
+   if (textEncode.charCodeAt(i)>=65 && textEncode.charCodeAt(i)<=90){
+      decodeText = (textEncode.charCodeAt(i) + 65 - offset) % 26 + 65;
+    }else if(textEncode.charCodeAt(i)>=97 && textEncode.charCodeAt(i)<=122){
+       decodeText = (textEncode.charCodeAt(i) - 97 - (offset)) % 52 + 97;
+     }else{
+      decodeText = textEncode.charCodeAt(i)
+    }
+    decodeResult = decodeResult + String.fromCharCode(decodeText);
+    }
+  return decodeResult
+  }
 }
   // Acá escribe tu código.
   /* -Recibir un valor en string
@@ -50,7 +65,3 @@ return result
    - si la clave es correcta, descifra
    - si la clave es incorrecta aparece un mensaje que dice "clave incorrecta"
 */
-
-
-
-};

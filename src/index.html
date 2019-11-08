@@ -2,33 +2,65 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Caesar Cipher</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width">
+    <title>Diary Cipher</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div id="write">
-   <span> <center>
-     <img src="/images/cat.png" weigth="150px" heigth="95px"></center></span>
+    <!--<input type="search" id="search"><-->
+    <center>
+    <div id="play" >
 
-  <p> Fecha:</p> <input type="date">
-  <p> Título: </p> <input type="text">
+      <h1 id="title"> Cipher Diary</h1>
 
-  <form id='diary' align="center">
-       <!-- Aquí es donde se guarda el texto y el numero que el usuario ingresa-->
-       <br>
-     <input type="number" id="number" placeholder="Número" required>
-     <br><br>
-     <textarea type="text" placeholder="Escribe adentro" rows="30" cols="50" id="text" required></textarea>
-     <br>
-     <button type="submit" id="save">Guardar</button>
-     <button type"reset">Borrar todo</button>
-     </form>
+      <h3 id="subtitle"> Diario con cifrado</h3>
+
+      <input type=image src="images/cloudI.png" width="50" height="35" id="sigIn">
+<br><br>
+       <p> <button type="button" id="howWorks" class="button" align="center">¿CÓMO FUNCIONA?</button>
+        </p>
    </div>
+    <br>
+    <br>
+    <br>
+     <div id="noteDiary" class="screen" >
+    <span> <center>
+      <img src="images/cat.png" weigth="100" heigth="95"></center></span>
 
-   <div id='ShowResult'>
-     <input type="text" id="textEncode">
-     </div>
+   <p> Fecha:</p> <input type="date" class="shadow">
+   <p> Título: </p> <input type="text" class="shadow">
+
+   <form id='diary' align="center">
+     <!-- Aquí es donde se guarda el texto y el numero que el usuario ingresa-->
+     <br>
+   <input type="number" id="number" class="shadow" placeholder="Número" required>
+   <br><br>
+   <textarea type="text" class="shadow" placeholder="Escribe adentro" id="text" required></textarea>
+   <br>
+   <button type="button" id="save" class="buttonsA">Guardar</button>
+   <button type"reset" class="buttonsA">Borrar todo</button>
+   </form>
+ </div>
+<br>
+ <br>
+ <div id="noteCipher" class="screen" align="center" >
+<input type=image src="images/cat.png" width="50" height="35" id="code"> <br>
+ <textarea id="textEncode" class="shadow" readonly="readonly"></textarea>
+ <br>
+ <br>
+ <br>
+ </div>
+ <br>
+  <div id="decode" class="screen">
+    <input type=image src="images/cat.png" width="50" height="35" id="pet"> <br>
+     <textarea id="prove" class="shadow" readonly="readonly"></textarea>
+     <br>
+     <br>
+     <br>
+  </div>
+   </center>
     <script src="cipher.js"></script>
     <script src="index.js"></script>
+
   </body>
 </html>
