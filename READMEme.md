@@ -3,7 +3,7 @@
 Es un diario el cual te cifra tu texto y sólo te muestra el mensaje decifrado cuando ingresas el número que usaste para cifrarlo.
 
 
-![Alt text](./cifrar.JPG )
+![Alt text](./cifrar.JPG)
 
 ##UX
 
@@ -18,4 +18,4 @@ Es lindo y femenino.
 Cute como encantador para niños.
 
 **Prototipo Final**
-![Alt text](./ cipher.JPG )
+![Alt text](./cipher.JPG)
